@@ -7,7 +7,7 @@ class PoisonManager extends AbstractManager
     /**
      *
      */
-    const TABLE = '';
+    const TABLE = 'poison';
     //TODO:mettre le bon nom de table
 
     /**
@@ -16,5 +16,9 @@ class PoisonManager extends AbstractManager
     public function __construct()
     {
         parent::__construct(self::TABLE);
+    }
+
+    public function selectPoisonBySymptoms()
+    {
     }
 }
