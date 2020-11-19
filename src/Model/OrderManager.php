@@ -2,7 +2,7 @@
 
 namespace App\Model;
 
-class CureManager extends AbstractManager
+class OrderManager extends AbstractManager
 {
     /**
      *
