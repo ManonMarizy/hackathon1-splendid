@@ -7,8 +7,7 @@ class PoisonManager extends AbstractManager
     /**
      *
      */
-    const TABLE = '';
-    //TODO:mettre le bon nom de table
+    const TABLE = 'poison';
 
     /**
      *  Initializes this class.
