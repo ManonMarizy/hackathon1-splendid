@@ -1,0 +1,34 @@
+.homepage {
+    background-color: #C0E7A8;
+}
+
+.title-homepage {
+    font-size: 10px;
+}
+
+#left {
+    margin: 5px 5px 5px 0;
+}
+#right {
+    margin: 5px 0 5px 5px;
+}
+#bottom-div {
+    padding: 15px;
+    background-color: lightyellow;
+    margin-top: 10px;
+    width: 80%;
+}
+
+@media screen and (min-width: 992px) {
+ #searchnav {
+     margin-left: auto;
+ }
+}
+
+#homepagebody {
+    background-color: #C0E7A8;
+}
+
+#main-div {
+    padding: 20px;
+}
