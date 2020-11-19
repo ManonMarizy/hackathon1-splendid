@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Handlee&display=swap');
+
 .homepage {
     background-color: #C0E7A8;
 }
@@ -26,6 +28,7 @@
 }
 
 #homepagebody {
+    font-family: Handlee;
     background-color: #C0E7A8;
 }
 
