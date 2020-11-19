@@ -1,0 +1,35 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}
+Create the antidote
+{% endblock %}
+
+{% block stylesheet %}
+    <link rel="stylesheet" href="/assets/css/mastermind.css">
+{% endblock %}
+
+{% block content %}
+    <h1 class="titleMastermind">Create the antidote</h1>
+
+    <div class="main">
+        <form method="post" action="/mastermind/index" class="flexContainer flexCenter" />
+            <div class="ingredientsContainer">
+                {% for ingredient in ingredients %}
+                    <input id="{{ ingredient.nom }}" type="text" readonly class="ingredient" style="background: url('{{ ingredient.image }}'); background-size: 101% 101%;" value="{{ ingredient.nom }}" />
+                {% endfor %}
+            </div>
+
+            <input type="submit" class="mixIngredient" value="Mix" />
+        </form>
+
+        <div class="cauldron" id="cauldron" >
+            <div class="cauldronInside" id="cauldronInside"></div>
+        </div>
+    </div>
+
+    {{ dump() }}
+{% endblock %}
+
+{% block javascript %}
+<script src="/assets/js/mastermind.js" ></script>
+{% endblock %}
