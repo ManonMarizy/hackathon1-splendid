@@ -2,12 +2,19 @@
 
 {% block content %}
     <div class="container">
-        <h1 style="color: white; text-align: center; padding: 35px; font-weight: 900">
+        <h1 class="index-title" style="padding: 35px;
+">
             What's your problem ?
         </h1>
     </div>
     <div>
     <form class="container" id="search-form" action="/Search/show" method="post">
+           {% for symptom in symptoms %}
+               {% if symptom.id < 5 %}
+        <button class="btn btn-light" style="width: 300px; margin: 25px" type="submit" value="{{ symptom.id }}" name="symptom"> {{ symptom.name|capitalize }}</button>
+               {% endif %}
+        {% endfor %}
+        {#
         <select name="symptom-1" class="form-control form-control-sm" style="margin-bottom: 20px">
             <option value="">Select Symptom #1</option>
             {% for symptom in symptoms %}
@@ -33,7 +40,9 @@
             {% endfor %}
         </select>
         <input class="btn btn-light" type="submit">
+        #}
     </form>
     </div>
+
 
 {% endblock %}

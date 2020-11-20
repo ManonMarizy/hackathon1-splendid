@@ -16,22 +16,15 @@ class SearchController extends AbstractController
 
     public function show()
     {
-        $symptom1 = intval($_POST['symptom-1']);
-        $symptom2 = intval($_POST['symptom-2']);
-        $symptom3 = intval($_POST['symptom-3']);
-        $symptom4 = intval($_POST['symptom-4']);
-        $symptoms = [
-            'symp1ID' => $symptom1,
-            'symp2ID' => $symptom2,
-            'symp3ID' => $symptom3,
-            'symp4ID' => $symptom4
-        ];
+        $symptom = intval($_POST['symptom']);
 
         $poisonManager = new PoisonManager();
-        $poisons = $poisonManager->selectAllPoison();
+        $poisons = $poisonManager->selectPoisonBySymptomId($symptom);
+        $searchManager = new SearchManager();
+        $symptom = $searchManager->selectOneById($symptom);
 
         return $this->twig->render("Search/show.html.twig", [
-            'symptoms' => $symptoms,
+            'symptom' => $symptom,
             'poisons' => $poisons
         ]);
     }
