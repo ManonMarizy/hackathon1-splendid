@@ -1,27 +1,37 @@
-/*a {
-    color: black;
+@import url('https://fonts.googleapis.com/css2?family=Handlee&display=swap');
+
+.homepage {
+    background-color: #C0E7A8;
 }
 
-a:hover {
-    color: black;
-    text-decoration: none;
+.title-homepage {
+    font-size: 10px;
 }
 
-.card-custom {
-    max-width: 540px;
+#left {
+    margin: 5px 5px 5px 0;
+}
+#right {
+    margin: 5px 0 5px 5px;
+}
+#bottom-div {
+    padding: 15px;
+    background-color: lightyellow;
+    margin-top: 10px;
+    width: 80%;
 }
 
-.poison-card {
-    border-radius: 5px;
-    background-color: #fff7e0;
+@media screen and (min-width: 992px) {
+ #searchnav {
+     margin-left: auto;
+ }
 }
 
-.poison-card:hover {
-    background-color: #ffeaad;
+#homepagebody {
+    font-family: Handlee;
+    background-color: #C0E7A8;
 }
 
-.poison-image {
-    width: 100px;
-    height: 100px;
-    margin: 15px;
-}*/
+#main-div {
+    padding: 30px;
+}
