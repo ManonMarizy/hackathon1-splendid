@@ -22,7 +22,7 @@
                     <h5 class="card-title text-center">Symptoms</h5>
                     <ul class="list-group list-group-flush">
                         {% for poisonSymptom in poisonSymptoms %}
-                            <li class="list-group-item symptom border-0">{{ poisonSymptom.name}}</li>
+                            <li class="list-group-item symptom border-0">{{ poisonSymptom.name | capitalize}}</li>
                         {% endfor %}
                     </ul>
                 </div>
@@ -36,9 +36,13 @@
                 </div>
             {% else %}
                 <div class="card shadow p-3 mb-5 rounded poison-show">
-                    <div class="card-body text-center">
-                        <h5 class="card-title">Antidote description</h5>
-                        <p class="card-text">{{ cureInformations.name}}</p>
+                    <div class="card-body">
+                        <h5 class="card-title text-center">Antidote description</h5>
+                        <ul class="list-group list-group-flush">
+                            {% for cureInformation in cureInformations %}
+                                <li class="list-group-item symptom border-0 pl-0">{{ cureInformation.name}}</li>
+                            {% endfor %}
+                        </ul>
                     </div>
                 </div>
             {% endif %}
