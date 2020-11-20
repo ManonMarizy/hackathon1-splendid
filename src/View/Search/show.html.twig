@@ -5,8 +5,8 @@
     <div class="container">
         <h1 style="text-align: center; color: white; font-weight: bold; padding: 10px">Potential poisons for {{ symptom.name|capitalize }}</h1>
     </div>
-
-    {% for poison in poisons %}
+    <div>
+        {% for poison in poisons %}
             <div class="container-fluid">
                 <a style="text-decoration: none; color: black" href="/poison/show/{{ poison.id }}">
                 <div class="card mb-3" style="max-width: 80%; margin-right: 10%; margin-left: 10%;">
@@ -17,7 +17,7 @@
                         </div>
                         <div class="col-md-8">
                             <div class="card-body">
-                                <p class="card-text">{{ poison.symptom|capitalize }}</p>
+                                <p class="card-text text-center">{{ poison.symptom|capitalize }}</p>
                                 <p class="card-text">{{ poison.description }}</p>
                             </div>
                         </div>
@@ -25,18 +25,6 @@
                 </div>
                 </a>
             </div>
-    {% endfor %}
-    {#
-    {% for poison in poisons %}
-    <div class="card" style="width: 18rem;">
-        <img src="/assets/images/{{ poison.image }}" class="card-img-top" alt="{{ poison.name }}">
-        <div class="card-body">
-            <h5 class="card-title">{{ poison.name }}</h5>
-            <p class="card-text">{{ poison.description }}</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
-        </div>
-    </div>
-    {% endfor %}
-
-    #}
+            {% endfor %}
+         </div>
 {% endblock %}
