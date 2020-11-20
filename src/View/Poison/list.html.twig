@@ -4,8 +4,8 @@
     <div class="container d-flex flex-wrap justify-content-center">
     {% for poison in poisons %}
         <a href="/poison/show/{{ poison.id }}">
-            <div class="card m-3" style="max-width: 18rem;">
-                <div class="card-header" style="text-align: center">{{ poison.name }}</div>
+            <div class="card m-3 shadow p-3 mb-5 bg-white rounded" style="max-width: 18rem;">
+                <div class="card-header border border-secondary rounded" style="text-align: center">{{ poison.name }}</div>
                 <div class="card-body">
                     <img src="/assets/images/poisons/{{ poison.image }}" alt="" style="width: 100%">
                 </div>
