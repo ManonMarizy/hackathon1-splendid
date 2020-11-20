@@ -1,5 +1,30 @@
 {% extends 'layout.html.twig' %}
 
 {% block content %}
-    <h1>Hello Wilder !</h1>
+<body id="homepagebody">
+    <section class="homepage">
+        <div class="text-center mt-4">
+            <h1>Find an Antidote</h1>
+        </div>
+        <div class="container-fluid text-center" id="main-div">
+            <div class="row justify-content-center">
+                <div class="col-4" id="left">
+                    <h3>You know the poison, look for the antidote</h3>
+                    <a href="poison/list">
+                    <img src="/assets/images/homepage/kisspng-potion-clip-art-potions-clipart-5ae088f824e059.9419272815246645681511.png" class="rounded float-left img-fluid" id="img-left" alt="potionimg">
+                    </a>
+                </div>
+                <div class="col-4" id="right">
+                    <h3>You don't know the poison, search with yours symptoms</h3>
+                    <a href="/search/index">
+                    <img src="/assets/images/homepage/question-mark.png" class="rounded float-left img-fluid" id="img-right" alt="questionmark">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="container text-center rounded" id="bottom-div">
+        <h3>With find an antidote.com... <br> The poison is no more</h3>
+    </div>
+</body>
 {% endblock %}

@@ -1,0 +1,16 @@
+{% extends 'layout.html.twig' %}
+
+{% block content %}
+    <div class="container d-flex flex-wrap justify-content-center">
+    {% for poison in poisons %}
+        <a style="text-decoration: none; color: black" href="/poison/show/{{ poison.id }}">
+            <div class="card m-3 shadow p-3 mb-5 rounded poison-card p-card">
+                <div class="card-header text-center">{{ poison.name }}</div>
+                <div class="card-body p-0 mt-3">
+                    <img src="/assets/images/poisons/{{ poison.image }}" alt="Picture of {{ poison.name }}">
+                </div>
+            </div>
+        </a>
+    {% endfor %}
+    </div>
+{% endblock %}
