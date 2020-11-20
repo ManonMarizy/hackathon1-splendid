@@ -21,7 +21,7 @@ class PoisonManager extends AbstractManager
      */
     public function selectSymptomsById(int $id)
     {
-        $query = "SELECT * FROM symptom JOIN poison_has_symptom phs ON poison.id = phs.poison_id
+        $query = "SELECT * FROM symptom JOIN poison_has_symptom phs ON symptom.id = phs.symptom_id
         WHERE poison_id = :id";
         $statement = $this->pdo->prepare($query);
         $statement->bindValue(':id', $id, \PDO::PARAM_STR);

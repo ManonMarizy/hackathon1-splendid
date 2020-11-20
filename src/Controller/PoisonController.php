@@ -43,10 +43,11 @@ class PoisonController extends AbstractController
         $cureInformations = $cureManager->selectOneCureById($getById);
         $poisonInformations = $poisonManager->selectOneById($getById);
         $poisonSymptoms = $poisonManager->selectSymptomsById($getById);
-        if (!isset($cureInformations['igredient'])) {
+        if (!isset($poisonInformations['name'])) {
             header("Location: /");
         }
-        return $this->twig->render('CureManager/show.html.twig', [
+
+        return $this->twig->render('Poison/show.html.twig', [
             'cureInformations' => $cureInformations,
             'poisonInformations' => $poisonInformations,
             'poisonSymptoms' => $poisonSymptoms

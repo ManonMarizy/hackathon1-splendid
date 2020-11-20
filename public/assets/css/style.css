@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Handlee&display=swap');
 
+body {
+    background-color: #A1A1A1;
+    font-family: 'Handlee', cursive;
+}
 .homepage {
     background-color: #C0E7A8;
 }
@@ -20,15 +24,13 @@
     margin-top: 10px;
     width: 80%;
 }
-
-@media screen and (min-width: 992px) {
- #searchnav {
-     margin-left: auto;
- }
+nav {
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
 }
 
 #homepagebody {
-    font-family: Handlee;
+
     background-color: #C0E7A8;
 }
 
@@ -36,8 +38,8 @@
     padding: 30px;
 }
 
-@media screen and (max-width: 400px)  {
-    .imgPoisonShow {
-        display: none;
+@media screen and (min-width: 992px) {
+    #searchnav {
+        margin-left: auto;
     }
 }
