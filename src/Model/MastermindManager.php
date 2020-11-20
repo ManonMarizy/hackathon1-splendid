@@ -16,19 +16,18 @@ class MastermindManager extends AbstractManager
     public function ingredients($idPoison)
     {
         // prepared request
-        $query = "SELECT * FROM " . self::TABLE . " as i ";
-        $query .= "inner join poison_has_ingredient as pi ON pi.ingredient_id = i.id ";
-        $query .= "WHERE pi.poison_id = :id";
+        $query = "select i.id, i.name, i.image from " . self::TABLE . " as i ";
+        $query .= " inner join poison_has_ingredient as pi ON pi.ingredient_id = i.id";
+        $query .= " where pi.poison_id = :id";
         $statement = $this->pdo->prepare($query);
         $statement->bindValue('id', $idPoison, \PDO::PARAM_INT);
         $statement->execute();
         return $statement->fetchAll();
     }
-
     public function symptoms($idPoison)
     {
         // prepared request
-        $query = "SELECT * FROM " . self::TABLE2 . " as s ";
+        $query = "SELECT s.id, s.name FROM " . self::TABLE2 . "  as s ";
         $query .= "inner join poison_has_symptom as ps ON s.id = ps.poison_id ";
         $query .= "WHERE ps.poison_id = :id";
         $statement = $this->pdo->prepare($query);
@@ -37,12 +36,12 @@ class MastermindManager extends AbstractManager
         return $statement->fetchAll();
     }
 
-    public function selectPoison($idPoison)
+    public function selectPoisonById($id)
     {
-        $req = $this->pdo->prepare('SELECT * FROM ' . self::TABLE3 . ' WHERE id = :id');
-        $req->bindValue(':id', $idPoison, \PDO::PARAM_INT);
-        $req->execute();
-
-        return $req->fetchAll(\PDO::FETCH_ASSOC);
+        // prepared request
+        $statement = $this->pdo->prepare("SELECT * FROM " . self::TABLE3 . " WHERE id=:id");
+        $statement->bindValue('id', $id, \PDO::PARAM_INT);
+        $statement->execute();
+        return $statement->fetch();
     }
 }
