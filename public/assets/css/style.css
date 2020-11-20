@@ -1,11 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Handlee&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Redressed&display=swap');
 
 body {
-    background-color: #A1A1A1;
-    font-family: 'Handlee', cursive;
-}
-.homepage {
-    background-color: #C0E7A8;
+    font-family: 'Redressed', cursive;
+    background-image: url("../images/homepage/background.jpg");
+    background-size: cover;
 }
 
 .title-homepage {
@@ -20,18 +18,13 @@ body {
 }
 #bottom-div {
     padding: 15px;
-    background-color: lightyellow;
+    background-color: #C0E7A8;
     margin-top: 10px;
     width: 80%;
 }
 nav {
     border-bottom-right-radius: 10px;
     border-bottom-left-radius: 10px;
-}
-
-#homepagebody {
-
-    background-color: #C0E7A8;
 }
 
 #main-div {
