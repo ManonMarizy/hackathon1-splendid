@@ -2,20 +2,20 @@
 
 namespace App\Controller;
 
-use App\Model\MastermindManager;
+use App\Model\AntidoteManager;
 
-class MastermindController extends AbstractController
+class AntidoteController extends AbstractController
 {
     public function index($idPoison)
     {
 
-        $mastermindManager = new MastermindManager();
+        $mastermindManager = new AntidoteManager();
         $poison = $mastermindManager->selectPoisonById($idPoison);
         $ingredients = $mastermindManager->ingredients($idPoison);
         $symptoms = $mastermindManager->symptoms($idPoison);
         $allIngredients = $mastermindManager->selectAll();
 
-        return $this->twig->render('Mastermind/index.html.twig', [
+        return $this->twig->render('Antidote/index.html.twig', [
             'symptoms' => $symptoms,
             'ingredients' => $ingredients,
             'allIngredients' => $allIngredients,
@@ -30,7 +30,7 @@ class MastermindController extends AbstractController
 
         if ($_SERVER['REQUEST_METHOD'] == 'POST' && !empty($_POST)) {
             $idPoison = $_POST['idPoison'];
-            $mastermindManager = new MastermindManager();
+            $mastermindManager = new AntidoteManager();
             $poison = $mastermindManager->selectPoisonById($idPoison);
             $ingredients = $mastermindManager->ingredients($idPoison);
             $symptoms = $mastermindManager->symptoms($idPoison);
@@ -49,7 +49,7 @@ class MastermindController extends AbstractController
                 $badIngredients = $result;
                 $phase = "It's the wrong combination of ingredients";
 
-                return $this->twig->render('Mastermind/index.html.twig', [
+                return $this->twig->render('Antidote/index.html.twig', [
                     'goodIngredients' => $goodIngredients,
                     'badIngredients' => $badIngredients,
                     'phase' => $phase,
@@ -65,7 +65,7 @@ class MastermindController extends AbstractController
                 $goodIngredients = $selectedIngredients;
                 $phase = "congratulations, you managed to find the antidote!";
 
-                return $this->twig->render('Mastermind/index.html.twig', [
+                return $this->twig->render('Antidote/index.html.twig', [
                     'goodIngredients' => $goodIngredients,
                     'badIngredients' => $badIngredients,
                     'phase' => $phase,

@@ -2,7 +2,7 @@
 
 namespace App\Model;
 
-class MastermindManager extends AbstractManager
+class AntidoteManager extends AbstractManager
 {
     const TABLE = 'ingredient';
     const TABLE2 = 'symptom';
