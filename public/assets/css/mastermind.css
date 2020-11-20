@@ -1,4 +1,3 @@
-
 body {
     font-family: sans-serif;
     padding-bottom: 30px;
@@ -176,16 +175,16 @@ body {
 }
 
 .badIngredient {
-    width: 100px; 
-    height: 100px; 
+    width: 100px;
+    height: 100px;
     background: red;
     border-radius: 10px;
     margin: 4px;
 }
 
 .goodIngredient {
-    width: 100px; 
-    height: 100px; 
+    width: 100px;
+    height: 100px;
     background: #7FEF7F;
     border-radius: 10px;
     margin: 4px;
@@ -229,5 +228,3 @@ body {
     align-items: center;
     width: 300px;
 }
-
-

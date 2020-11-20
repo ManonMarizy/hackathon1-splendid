@@ -1,4 +1,3 @@
-
 let ingredients = document.querySelectorAll('.ingredient'),
     cauldronInside = document.getElementById('cauldronInside'),
     mixIngredient = document.getElementById('mixIngredient'),
@@ -114,7 +113,7 @@ for (let i = 0, c = ingredients.length; i < c; i++) {
 function animIngredient(element, pLeft, pTop, pLeftIncrease, pTopIncrease, pLeftSpeed, pTopSpeed) {
     if (element) {
         if (pLeft <= 0) {
-            pLeftIncrease = true; 
+            pLeftIncrease = true;
         } else if (pLeft >= (cauldronInside.offsetWidth - 100)) {
             pLeftIncrease = false;
         }
@@ -126,7 +125,7 @@ function animIngredient(element, pLeft, pTop, pLeftIncrease, pTopIncrease, pLeft
         }
 
         if (pTop <= 0) {
-            pTopIncrease = true; 
+            pTopIncrease = true;
         } else if (pTop >= (cauldronInside.offsetHeight - 100)) {
             pTopIncrease = false;
         }
@@ -143,10 +142,7 @@ function animIngredient(element, pLeft, pTop, pLeftIncrease, pTopIncrease, pLeft
         setTimeout(animIngredient, 10, element, pLeft, pTop, pLeftIncrease, pTopIncrease, pLeftSpeed, pTopSpeed);
     }
 }
-
-
 for (let i = 0, c = ingredientsObject.length; i < c; i++) {
     animIngredient(ingredientsObject[i].element, ingredientsObject[i].pLeft, ingredientsObject[i].pTop, ingredientsObject[i].pLeftIncrease, ingredientsObject[i].pTopIncrease, ingredientsObject[i].pLeftSpeed, ingredientsObject[i].pTopSpeed);
 }
-
 

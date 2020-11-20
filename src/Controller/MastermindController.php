@@ -8,13 +8,11 @@ class MastermindController extends AbstractController
 {
     public function index($idPoison)
     {
-
         $mastermindManager = new MastermindManager();
         $poison = $mastermindManager->selectPoisonById($idPoison);
         $ingredients = $mastermindManager->ingredients($idPoison);
         $symptoms = $mastermindManager->symptoms($idPoison);
         $allIngredients = $mastermindManager->selectAll();
-
         return $this->twig->render('Mastermind/index.html.twig', [
             'symptoms' => $symptoms,
             'ingredients' => $ingredients,
@@ -43,7 +41,6 @@ class MastermindController extends AbstractController
             $selectedIngredients = $_POST['ingredients'];
             $result = array_diff($selectedIngredients, $idIngredients);
 
-
             if (count($result)) {
                 $goodIngredients = array_intersect($selectedIngredients, $idIngredients);
                 $badIngredients = $result;
@@ -56,7 +53,6 @@ class MastermindController extends AbstractController
                     'allIngredients' => $allIngredients,
                     'poison' => $poison,
                     'symptoms' => $symptoms,
-
                     'idIngredients' => $idIngredients,
                     'selectedIngredients' => $selectedIngredients,
                     'result' => $result,
@@ -71,7 +67,6 @@ class MastermindController extends AbstractController
                     'phase' => $phase,
                     'allIngredients' => $allIngredients,
                     'poison' => $poison,
-
                     'idIngredients' => $idIngredients,
                     'selectedIngredients' => $selectedIngredients,
                     'result' => $result,
