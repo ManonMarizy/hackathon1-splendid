@@ -1,33 +1,51 @@
 
 let ingredients = document.querySelectorAll('.ingredient');
-    cauldronInside = document.getElementById('cauldronInside');
+    cauldronInside = document.getElementById('cauldronInside'),
+    ingredientInsideCauldron = null;
 
-/*
+// <input id="{{ ingredient.name }}" type="text" readonly class="ingredient" style="background: url('/assets/images/{{ ingredient.image }}'); background-size: 101% 101%;" value="{{ ingredient.name }}" />
+
+let pLeft = 0,
+    pTop = 0
+    pLeftIncrease = false,
+    pTopIncrease = false;
+
+
 function manageCauldron() {
     cauldronInside.innerHTML = '';
 
+    let urlPicture = '';
+
     for (let i = 0, c = ingredients.length; i < c; i++) {
-        if (ingredients.className == 'ingredientSelected') {
-            cauldron.appendChild(ingredients[i]);
+        if (ingredients[i].className == 'ingredientSelected') {
+            if (/"(.+)"/i.test(ingredients[i].style.backgroundImage)) {
+                urlPicture = RegExp.$1;
+            }
+
+            cauldronInside.innerHTML += '<img src="' + urlPicture + '" class="ingredientInsideCauldron" alt="' + ingredients[i].id + '" />';
         }
     }
 }
-*/
 
 
 for (let i = 0, c = ingredients.length; i < c; i++) {
     ingredients[i].addEventListener('click', function(e) {
-        if (this.className == 'ingredient') {
-            this.className = 'ingredientSelected';
-            this.name = this.id;
+        ingredientInsideCauldron = document.querySelectorAll('.ingredientInsideCauldron');
 
- //           manageCauldron();
+        if (this.className == 'ingredient') {
+            if (ingredientInsideCauldron.length != 2) {
+                this.className = 'ingredientSelected';
+                this.name = this.id;
+
+                manageCauldron();
+            }
         } else {
             this.className = 'ingredient';
             this.name = '';
 
-   //         manageCauldron();
+            manageCauldron();
         }
     });
 }
+
 

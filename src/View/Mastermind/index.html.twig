@@ -15,7 +15,7 @@ Create the antidote
         <form method="post" action="/mastermind/index" class="flexContainer flexCenter" />
             <div class="ingredientsContainer">
                 {% for ingredient in ingredients %}
-                    <input id="{{ ingredient.nom }}" type="text" readonly class="ingredient" style="background: url('{{ ingredient.image }}'); background-size: 101% 101%;" value="{{ ingredient.nom }}" />
+                    <input id="{{ ingredient.name }}" type="text" readonly class="ingredient" style="background: url('/assets/images/{{ ingredient.image }}'); background-size: 101% 101%;" value="{{ ingredient.name }}" />
                 {% endfor %}
             </div>
 

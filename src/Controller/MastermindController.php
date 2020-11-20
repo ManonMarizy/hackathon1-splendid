@@ -2,7 +2,7 @@
 
 namespace App\Controller;
 
-USE App\Model\MastermindManager;
+use App\Model\MastermindManager;
 
 class MastermindController extends AbstractController
 {
