@@ -20,9 +20,9 @@
             <div class="card mb-3 shadow mb-5 rounded poison-show">
                 <div class="card-body">
                     <h5 class="card-title text-center">Symptoms</h5>
-                    <ul class="list-group list-group-flush text-center">
+                    <ul class="list-group list-group-flush">
                         {% for poisonSymptom in poisonSymptoms %}
-                            <li class="list-group-item">{{ poisonSymptom.name}}</li>
+                            <li class="list-group-item symptom border-0">{{ poisonSymptom.name}}</li>
                         {% endfor %}
                     </ul>
                 </div>
