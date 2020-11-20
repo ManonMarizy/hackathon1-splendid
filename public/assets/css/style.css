@@ -15,14 +15,11 @@ html {
 
 body {
     background-color: transparent;
+    font-family: 'Redressed', cursive;
+
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Handlee&display=swap');
-
-body {
-    font-family: 'Redressed', cursive;
-    background-size: cover;
-}
 
 nav {
     background-color:#cfcfff;
