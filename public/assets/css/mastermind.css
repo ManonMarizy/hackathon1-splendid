@@ -1,7 +1,11 @@
 
 body {
     font-family: sans-serif;
-    background: #CFCFFF;
+    padding-bottom: 30px;
+}
+
+#page {
+    margin-top: 30px;
 }
 
 .flexContainer {
@@ -26,29 +30,42 @@ body {
     border-radius: 10px;
     width: 90%;
     margin: auto;
-    margin-top: 16px;
     padding-top: 16px;
     padding-bottom: 16px;
 }
 
-.titleMastermind {
-    font-size: 2.4em;
-    text-align: center;
+.myBlock {
     background: #EFEFFF;
     height: 327px;
     width: 500px;
     display: flex;
+    flex-direction: column;
     jusfity-content: center;
     align-items: center;
     transform: translate(0px, -2px);
     font-weight: normal;
+    position: relative;
 }
 
-.titleMastermind div {
-    background: white;
+.myBlock .titleMastermind {
+    background: black;
+    color: white;
     margin: auto;
-    padding: 40px;
-    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+    font-size: 1.3em;
+    width: 60%;
+    height: 100px;
+}
+
+.poisonDescription {
+    background: white;
+    margin: 20px;
+    padding: 10px;
+    font-weight: bold;
 }
 
 .ingredientsContainer {
@@ -148,4 +165,69 @@ body {
     height: 260px;
     border-radius: 0px 0px 0px 10px;
 }
+
+.combination {
+    display: flex;
+    justify-content: center;
+    background: black;
+    width: 75%;
+    margin: auto;
+    border-radius: 0px 0px 6px 6px;
+}
+
+.badIngredient {
+    width: 100px; 
+    height: 100px; 
+    background: red;
+    border-radius: 10px;
+    margin: 4px;
+}
+
+.goodIngredient {
+    width: 100px; 
+    height: 100px; 
+    background: #7FEF7F;
+    border-radius: 10px;
+    margin: 4px;
+}
+
+.bandInfo {
+    height: 100px;
+    width: 80%;
+    background: linear-gradient(black 0% 40%, #AFAFAF);
+    margin: auto;
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.classSelectedIngredient, .classRemainingIngredient, .combinationNotFound, .combinationFound {
+    background: white;
+    font-size: 1.4em;
+    text-align: center;
+    padding: 20px;
+    height: 80px;
+    font-weight: bold;
+    border-radius: 10px;
+}
+
+.combinationNotFound {
+    font-size: 1em;
+    color: red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+}
+
+.combinaisonFound {
+    font-size: 1em;
+    color: #4FAF4F;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+}
+
 

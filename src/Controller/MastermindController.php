@@ -43,12 +43,11 @@ class MastermindController extends AbstractController
             $selectedIngredients = $_POST['ingredients'];
             $result = array_diff($selectedIngredients, $idIngredients);
 
-            var_dump($_POST);
 
             if (count($result)) {
                 $goodIngredients = array_intersect($selectedIngredients, $idIngredients);
                 $badIngredients = $result;
-                $phase = "Sorry, no ingredients found";
+                $phase = "It's the wrong combination of ingredients";
 
                 return $this->twig->render('Mastermind/index.html.twig', [
                     'goodIngredients' => $goodIngredients,

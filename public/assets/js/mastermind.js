@@ -1,7 +1,9 @@
 
 let ingredients = document.querySelectorAll('.ingredient'),
     cauldronInside = document.getElementById('cauldronInside'),
-    mixIngredient = document.getElementById('mixIngredient');
+    mixIngredient = document.getElementById('mixIngredient'),
+    classSelectedIngredient = document.getElementById('classSelectedIngredient'),
+    classRemainingIngredient = document.getElementById('classRemainingIngredient'),
     urlPicture = '';
 
 function infoIngredient(element, pLeft, pTop, pLeftIncrease, pTopIncrease, pLeftSpeed, pTopSpeed) {
@@ -21,6 +23,11 @@ function randNum(min, max, integer) {
         return Math.floor(Math.random() * (max - min) + min);
     }
 }
+
+
+mixIngredient.disabled = true;
+mixIngredient.style.opacity = '0.2';
+mixIngredient.style.cursor = 'default';
 
 for (let i = 0, c = ingredients.length; i < c; i++) {
     if (/"(.+)"/i.test(ingredients[i].style.backgroundImage)) {
@@ -68,6 +75,19 @@ function manageCauldron() {
         if (ingredientInsideCauldron[i].style.width == '100px') {
             selectedIngredients.push(ingredientInsideCauldron[i]);
         }
+    }
+
+    classSelectedIngredient.innerHTML = 'Selected Ingredient : ' + selectedIngredients.length;
+    classRemainingIngredient.innerHTML = 'Remaining Ingredient : ' + (4 - selectedIngredients.length);
+
+    if (selectedIngredients.length == 4) {
+        mixIngredient.disabled = false;
+        mixIngredient.style.opacity = 1;
+        mixIngredient.style.cursor = 'pointer';
+    } else {
+        mixIngredient.disabled = true;
+        mixIngredient.style.opacity = 0.2;
+        mixIngredient.style.cursor = 'default';
     }
 }
 
