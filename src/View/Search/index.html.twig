@@ -35,17 +35,15 @@
         <input class="btn btn-light" type="submit">
     </form>
     </div>
+    {#
     <div>
         <form style="color: white; font-size: large; font-weight: bold" class="container" id="search-form" action="/Search/show" method="post">
-            <input type="checkbox" id="symptom-1" name="symptom-1">
-            <label for="symptom-1"> Symptom #1 </label>
-            <input type="checkbox" id="symptom-2" name="symptom-2">
-            <label for="symptom-2"> Symptom #2</label> <br>
-            <input type="checkbox" id="symptom-3" name="symptom-3">
-            <label for="symptom-3"> Symptom #3 </label>
-            <input type="checkbox" id="symptom-4" name="symptom-4">
-            <label for="symptom-4"> Symptom #4 </label> <br>
+            {% for symptom in symptoms %}
+            <input type="checkbox" id="{{ symptom.id }}" name="{{ symptom.name }}">
+            <label for="{{ symptom.name }}"> {{ symptom.name }} </label> <br>
+            {% endfor %}
             <input class="btn btn-light" type="submit">
         </form>
     </div>
+    #}
 {% endblock %}

@@ -28,7 +28,7 @@ class SearchController extends AbstractController
         ];
 
         $poisonManager = new PoisonManager();
-        $poisons = $poisonManager->selectAll();
+        $poisons = $poisonManager->selectAllPoison();
 
         return $this->twig->render("Search/show.html.twig", [
             'symptoms' => $symptoms,

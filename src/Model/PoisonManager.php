@@ -18,7 +18,12 @@ class PoisonManager extends AbstractManager
         parent::__construct(self::TABLE);
     }
 
-    public function selectPoisonBySymptoms()
+    public function selectAllPoison()
     {
+        return $this->pdo->query("select poison.id, poison.name, poison.description, 
+    poison.image, p.poison_id, p.symptom_id, s.name as symptom, s.id from poison 
+    INNER JOIN poison_has_symptom p ON p.poison_id=poison.id 
+    INNER JOIN symptom s ON s.id=p.symptom_id
+    WHERE s.id = 1;")->fetchAll();
     }
 }

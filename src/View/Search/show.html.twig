@@ -1,42 +1,30 @@
 {% extends "layout.html.twig" %}
 
 {% block content %}
-    {{ dump() }}
+    {{ dump(symptoms) }}
+
+    {{ dump(poisons) }}
     <div class="container">
         <h1 style="text-align: center; color: white; font-weight: bold">Potential poisons</h1>
     </div>
 
-    <div class="container-fluid">
-        <div class="card mb-3" style="max-width: 540px;">
-            <div class="row no-gutters">
-                <div class="col-md-4">
-                    <h5 class="card-title">poison.name</h5>
-                    <img src="https://via.placeholder.com/300/09f/fff.png" class="card-img" alt="...">
-                </div>
-                <div class="col-md-8">
-                    <div class="card-body">
-                        <p class="card-text">symptom.name</p>
-                        <p class="card-text">poison.description</p>
+    {% for poison in poisons %}
+            <div class="container-fluid">
+                <div class="card mb-3" style="max-width: 540px;">
+                    <div class="row no-gutters">
+                        <div class="col-md-4">
+                            <h5 class="card-title">{{ poison.name }}</h5>
+                            <img src="{{ poison.image }}" class="card-img" alt="{{ poison.name }}">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <p class="card-text">{{ poison.symptom|capitalize }}</p>
+                                <p class="card-text">{{ poison.description }}</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="card mb-3" style="max-width: 540px;">
-            <div class="row no-gutters">
-                <div class="col-md-4">
-                    <h5 class="card-title">poison.name</h5>
-                    <img src="..." class="card-img" alt="...">
-                </div>
-                <div class="col-md-8">
-                    <div class="card-body">
-                        <p class="card-text">symptom.name</p>
-                        <p class="card-text">poison.description</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
+    {% endfor %}
 
 {% endblock %}
