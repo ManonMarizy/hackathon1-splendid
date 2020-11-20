@@ -1,3 +1,4 @@
+
 html {
     background: url(https://images.unsplash.com/photo-1492185244344-91fde303149e?ixlib=rb-1.2.1&q=80&fm=jpg) no-repeat center center fixed;
     -webkit-background-size: cover;
@@ -14,5 +15,43 @@ html {
 
 body {
     background-color: transparent;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Handlee&display=swap');
+
+.homepage {
+    background-color: #C0E7A8;
+}
+
+.title-homepage {
+    font-size: 10px;
+}
+
+#left {
+    margin: 5px 5px 5px 0;
+}
+#right {
+    margin: 5px 0 5px 5px;
+}
+#bottom-div {
+    padding: 15px;
+    background-color: lightyellow;
+    margin-top: 10px;
+    width: 80%;
+}
+
+@media screen and (min-width: 992px) {
+ #searchnav {
+     margin-left: auto;
+ }
+}
+
+#homepagebody {
+    font-family: Handlee;
+    background-color: #C0E7A8;
+}
+
+#main-div {
+    padding: 30px;
 }
 

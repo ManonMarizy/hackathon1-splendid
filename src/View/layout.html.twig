@@ -17,7 +17,11 @@
 
     <body style="background-color: transparent">
 
-    {% block content %}{% endblock %}
+    <body>
+    {% include('_header.html.twig') %}
+    {% block content %}
+    {% endblock %}
+    {% include('_footer.html.twig') %}
     {% block javascript %}
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
             integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
@@ -28,5 +32,3 @@
     {% endblock %}
     </body>
 </html>
-
-
