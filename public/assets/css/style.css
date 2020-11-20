@@ -1,11 +1,4 @@
-
-html {
-    background: url(https://images.unsplash.com/photo-1492185244344-91fde303149e?ixlib=rb-1.2.1&q=80&fm=jpg) no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-}
+@import url('https://fonts.googleapis.com/css2?family=Redressed&display=swap');
 
 #search-form {
     background-color: inherit;
@@ -17,10 +10,10 @@ body {
     background-color: transparent;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Handlee&display=swap');
-
-.homepage {
-    background-color: #C0E7A8;
+body {
+    font-family: 'Redressed', cursive;
+    background-image: url("../images/homepage/background.jpg");
+    background-size: cover;
 }
 
 .title-homepage {
@@ -35,23 +28,19 @@ body {
 }
 #bottom-div {
     padding: 15px;
-    background-color: lightyellow;
+    background-color: #C0E7A8;
     margin-top: 10px;
     width: 80%;
 }
 
-@media screen and (min-width: 992px) {
- #searchnav {
-     margin-left: auto;
- }
-}
-
-#homepagebody {
-    font-family: Handlee;
-    background-color: #C0E7A8;
-}
-
 #main-div {
     padding: 30px;
+    width: auto;
+}
+
+@media screen and (min-width: 992px) {
+    #searchnav {
+        margin-left: auto;
+    }
 }
 

@@ -1,0 +1,51 @@
+{% extends 'layout.html.twig' %}
+
+{%  block content %}
+    <div class="d-flex flex-wrap justify-content-center mt-4">
+        <div class="d-flex flex-column align-items-center">
+            <div class="card m-3 shadow p-3 mb-5 bg-white rounded" style="max-width: 18rem;">
+                <div class="card-header border border-secondary rounded" style="text-align: center">{{ poisonInformations.name }}</div>
+                <div class="card-body">
+                    <img src="/assets/images/poisons/{{ poisonInformations.image }}" alt="picture of {{ poisonInformations.name }}" style="width: 100%">
+                </div>
+            </div>
+            <div class="card mb-4 shadow p-3 mb-5 bg-white rounded" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title text-center">Poison description</h5>
+                    <p class="card-text">{{  poisonInformations.description }}</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="d-flex flex-column align-items-center pt-3 sm ml-5">
+            <div class="card mb-3 shadow p-3 mb-5 bg-white rounded" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title text-center">Symptoms</h5>
+                    <ul class="list-group list-group-flush text-center">
+                        {% for poisonSymptom in poisonSymptoms %}
+                            <li class="list-group-item">{{ poisonSymptom.name}}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+
+            {% if not poisonInformations.antidote %}
+                <div class="card shadow p-3 mb-5 bg-white rounded" style="width: 18rem;">
+                    <div class="card-body text-center ">
+                        <h5 class="card-title">There is any antidote for this poison</h5>
+                        <button type="button" class="btn btn-outline-success">Create the antidote</button>
+                    </div>
+                </div>
+            {% else %}
+                <div class="card shadow p-3 mb-5 bg-white rounded" style="width: 18rem;">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Antidote description</h5>
+                        <p class="card-text">{{ cureInformations.name}}</p>
+                    </div>
+                </div>
+            {% endif %}
+        </div>
+
+
+    </div>
+{% endblock %}
