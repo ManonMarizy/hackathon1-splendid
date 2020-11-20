@@ -5,7 +5,7 @@
 
     {{ dump(poisons) }}
     <div class="container">
-        <h1 style="text-align: center; color: white; font-weight: bold">Potential poisons</h1>
+        <h1 style="text-align: center; color: white; font-weight: bold; padding: 10px">Potential poisons</h1>
     </div>
 
     {% for poison in poisons %}
@@ -13,8 +13,8 @@
                 <div class="card mb-3" style="max-width: 540px;">
                     <div class="row no-gutters">
                         <div class="col-md-4">
-                            <h5 class="card-title">{{ poison.name }}</h5>
-                            <img src="{{ poison.image }}" class="card-img" alt="{{ poison.name }}">
+                            <h5 style="text-align: center; margin-bottom: unset" class="card-title">{{ poison.name }}</h5>
+                            <img src="/assets/images/{{ poison.image }}" class="card-img" alt="{{ poison.name }}">
                         </div>
                         <div class="col-md-8">
                             <div class="card-body">

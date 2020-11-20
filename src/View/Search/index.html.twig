@@ -9,25 +9,25 @@
     <div>
     <form class="container" id="search-form" action="/Search/show" method="post">
         <select name="symptom-1" class="form-control form-control-sm" style="margin-bottom: 20px">
-            <option>Select Symptom #1</option>
+            <option value="">Select Symptom #1</option>
             {% for symptom in symptoms %}
             <option value="{{ symptom.id }}">{{ symptom.name }}</option>
             {% endfor %}
         </select>
         <select name="symptom-2" class="form-control form-control-sm" style="margin-bottom: 20px">
-            <option>Select Symptom #2</option>
+            <option value="">Select Symptom #2</option>
             {% for symptom in symptoms %}
                 <option value="{{ symptom.id }}">{{ symptom.name }}</option>
             {% endfor %}
         </select>
         <select name="symptom-3" class="form-control form-control-sm" style="margin-bottom: 20px">
-            <option>Select Symptom #3</option>
+            <option value="">Select Symptom #3</option>
             {% for symptom in symptoms %}
                 <option value="{{ symptom.id }}">{{ symptom.name }}</option>
             {% endfor %}
         </select>
         <select name="symptom-4" class="form-control form-control-sm" style="margin-bottom: 20px">
-            <option>Select Symptom #4</option>
+            <option value="">Select Symptom #4</option>
             {% for symptom in symptoms %}
                 <option value="{{ symptom.id }}">{{ symptom.name }}</option>
             {% endfor %}
@@ -35,15 +35,5 @@
         <input class="btn btn-light" type="submit">
     </form>
     </div>
-    {#
-    <div>
-        <form style="color: white; font-size: large; font-weight: bold" class="container" id="search-form" action="/Search/show" method="post">
-            {% for symptom in symptoms %}
-            <input type="checkbox" id="{{ symptom.id }}" name="{{ symptom.name }}">
-            <label for="{{ symptom.name }}"> {{ symptom.name }} </label> <br>
-            {% endfor %}
-            <input class="btn btn-light" type="submit">
-        </form>
-    </div>
-    #}
+
 {% endblock %}
