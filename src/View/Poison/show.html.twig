@@ -21,7 +21,7 @@
             <div class="card mb-3 shadow p-3 mb-5 bg-white rounded" style="width: 18rem;">
                 <div class="card-body">
                     <h5 class="card-title text-center">Symptoms</h5>
-                    <ul class="list-group list-group-flush">
+                    <ul class="list-group list-group-flush text-center">
                         {% for poisonSymptom in poisonSymptoms %}
                             <li class="list-group-item">{{ poisonSymptom.name}}</li>
                         {% endfor %}
@@ -38,7 +38,7 @@
                 </div>
             {% else %}
                 <div class="card shadow p-3 mb-5 bg-white rounded" style="width: 18rem;">
-                    <div class="card-body">
+                    <div class="card-body text-center">
                         <h5 class="card-title">Antidote description</h5>
                         <p class="card-text">{{ cureInformations.name}}</p>
                     </div>
