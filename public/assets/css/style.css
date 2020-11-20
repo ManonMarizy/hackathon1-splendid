@@ -28,10 +28,11 @@
 }
 
 #homepagebody {
-    font-family: Handlee;
+    font-family: 'Handlee', cursive;
     background-color: #C0E7A8;
 }
 
 #main-div {
     padding: 30px;
+    width: auto;
 }
