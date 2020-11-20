@@ -6,8 +6,9 @@ use App\Model\MastermindManager;
 
 class MastermindController extends AbstractController
 {
-    public function index($idPoison = 1)
+    public function index($idPoison)
     {
+
         $mastermindManager = new MastermindManager();
         $poison = $mastermindManager->selectPoisonById($idPoison);
         $ingredients = $mastermindManager->ingredients($idPoison);
@@ -39,11 +40,13 @@ class MastermindController extends AbstractController
                 $idIngredients[] = $ingredient['id'];
             }
 
-            $selectedIngredients = $_POST;
+            $selectedIngredients = $_POST['ingredients'];
             $result = array_diff($selectedIngredients, $idIngredients);
 
-            if (count($result) <= 4) {
-                $goodIngredients  = array_intersect($selectedIngredients, $idIngredients);
+            var_dump($_POST);
+
+            if (count($result)) {
+                $goodIngredients = array_intersect($selectedIngredients, $idIngredients);
                 $badIngredients = $result;
                 $phase = "Sorry, no ingredients found";
 
@@ -54,6 +57,10 @@ class MastermindController extends AbstractController
                     'allIngredients' => $allIngredients,
                     'poison' => $poison,
                     'symptoms' => $symptoms,
+
+                    'idIngredients' => $idIngredients,
+                    'selectedIngredients' => $selectedIngredients,
+                    'result' => $result,
                 ]);
             } else {
                 $goodIngredients = $selectedIngredients;
@@ -65,6 +72,10 @@ class MastermindController extends AbstractController
                     'phase' => $phase,
                     'allIngredients' => $allIngredients,
                     'poison' => $poison,
+
+                    'idIngredients' => $idIngredients,
+                    'selectedIngredients' => $selectedIngredients,
+                    'result' => $result,
                 ]);
             }
         }

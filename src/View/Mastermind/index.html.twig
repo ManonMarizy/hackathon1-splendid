@@ -19,22 +19,34 @@ Create the antidote
     </div>
 
     <div class="main">
-        <form method="post" action="/mastermind/index" class="flexContainer flexSpaceAround" />
+        <form method="post" action="/mastermind/antidote" class="flexContainer flexSpaceAround" />
             <div class="ingredientsContainer">
                 {% for ingredient in allIngredients %}
-                    <input id="{{ ingredient.name }}" type="text" readonly class="ingredient" style="background: url('/assets/images/{{ ingredient.image }}'); background-size: 101% 101%;" value="{{ ingredient.name }}" />
+                    <input id="{{ ingredient.name }}" type="text" readonly class="ingredient" style="background: url('/assets/images/{{ ingredient.image }}'); background-size: 101% 101%;" value="{{ ingredient.id }}"  />
                 {% endfor %}
             </div>
 
             <input id="idPoison" name="idPoison" type="hidden" value="{{ poison.id }}" />
 
-            <input type="submit" class="mixIngredient" value="" />
+            <input type="submit" class="mixIngredient" value="" id="mixIngredient" />
         </form>
 
         <div class="cauldron" id="cauldron" >
             <div class="cauldronInside" id="cauldronInside"></div>
         </div>
     </div>
+
+    <div style="display: flex";>
+        {% for badIngredient in badIngredients %}
+            <input readonly type="text" style="width: 100px; height: 100px; background: red;" />
+        {% endfor %}
+
+        {% for goodIngredient in goodIngredients %}
+            <input readonly type="text" style="width: 100px; height: 100px; background: green;" />
+        {% endfor %}
+    </div>
+
+    {{ dump() }}
 {% endblock %}
 
 {% block javascript %}

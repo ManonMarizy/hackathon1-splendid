@@ -1,6 +1,7 @@
 
 let ingredients = document.querySelectorAll('.ingredient'),
     cauldronInside = document.getElementById('cauldronInside'),
+    mixIngredient = document.getElementById('mixIngredient');
     urlPicture = '';
 
 function infoIngredient(element, pLeft, pTop, pLeftIncrease, pTopIncrease, pLeftSpeed, pTopSpeed) {
@@ -76,7 +77,7 @@ for (let i = 0, c = ingredients.length; i < c; i++) {
         if (this.className == 'ingredient') {
             if (selectedIngredients.length != 4) {
                 this.className = 'ingredientSelected';
-                this.name = this.id;
+                this.name = "ingredients[]";
 
                 manageCauldron();
             }
@@ -127,4 +128,5 @@ function animIngredient(element, pLeft, pTop, pLeftIncrease, pTopIncrease, pLeft
 for (let i = 0, c = ingredientsObject.length; i < c; i++) {
     animIngredient(ingredientsObject[i].element, ingredientsObject[i].pLeft, ingredientsObject[i].pTop, ingredientsObject[i].pLeftIncrease, ingredientsObject[i].pTopIncrease, ingredientsObject[i].pLeftSpeed, ingredientsObject[i].pTopSpeed);
 }
+
 
