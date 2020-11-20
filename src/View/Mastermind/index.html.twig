@@ -1,0 +1,70 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}
+Create the antidote
+{% endblock %}
+
+{% block stylesheet %}
+    <link rel="stylesheet" href="/assets/css/mastermind.css">
+{% endblock %}
+
+{% block content %}
+    <div id="page">
+        <div class="flexContainer flexCenter">
+            <div class="poisonBloc">
+                <h2>{{ poison.name }}</h2>
+                <img src="/assets/images/{{ poison.image }}" alt="{{ poison.name }}" class="poisonImage" />
+            </div>
+
+            <div class="myBlock">
+                <p class="poisonDescription">{{ poison.description }}</p>
+
+                <h1 class="titleMastermind">You can test your luck and try to find the antidote</h1>
+            </div>
+        </div>
+
+        <div class="bandInfo">
+            <div class="classSelectedIngredient" id="classSelectedIngredient">
+                Selected Ingredient : 0
+            </div>
+
+            <div class="classRemainingIngredient" id="classRemainingIngredient">
+                Remaining Ingredient : 4
+            </div>
+
+            <div class="combinationNotFound">{{ phase }}</div>
+        </div>
+
+        <div class="main">
+            <form method="post" action="/mastermind/antidote" class="flexContainer flexSpaceAround" />
+                <div class="ingredientsContainer">
+                    {% for ingredient in allIngredients %}
+                        <input id="{{ ingredient.name }}" type="text" readonly class="ingredient" style="background: url('/assets/images/{{ ingredient.image }}'); background-size: 101% 101%;" value="{{ ingredient.id }}"  />
+                    {% endfor %}
+                </div>
+
+                <input id="idPoison" name="idPoison" type="hidden" value="{{ poison.id }}" />
+
+                <input type="submit" class="mixIngredient" value="" id="mixIngredient" />
+            </form>
+
+            <div class="cauldron" id="cauldron" >
+                <div class="cauldronInside" id="cauldronInside"></div>
+            </div>
+        </div>
+
+        <div class="combination">
+            {% for badIngredient in badIngredients %}
+                <input readonly type="text" class="badIngredient" />
+            {% endfor %}
+
+            {% for goodIngredient in goodIngredients %}
+                <input readonly type="text" class="goodIngredient" />
+            {% endfor %}
+        </div>
+    <div>
+{% endblock %}
+
+{% block javascript %}
+<script src="/assets/js/mastermind.js" ></script>
+{% endblock %}
