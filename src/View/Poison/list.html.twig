@@ -1,0 +1,16 @@
+{% extends 'layout.html.twig' %}
+
+{% block content %}
+    <div class="container d-flex flex-wrap justify-content-center">
+    {% for poison in poisons %}
+        <a href="/poison/show/{{ poison.id }}">
+            <div class="card m-3" style="max-width: 18rem;">
+                <div class="card-header" style="text-align: center">{{ poison.name }}</div>
+                <div class="card-body">
+                    <img src="/assets/images/poisons/{{ poison.image }}" alt="" style="width: 100%">
+                </div>
+            </div>
+        </a>
+    {% endfor %}
+    </div>
+{% endblock %}
