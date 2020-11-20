@@ -1,16 +1,16 @@
 {% extends 'layout.html.twig' %}
 
 {% block content %}
+    <div class="container d-flex flex-wrap justify-content-center">
     {% for poison in poisons %}
-    <div class="container" style="max-width: 540px">
-        <div class="row no-gutters mt-3 align-items-center" style="border-radius: 5px; background-color: #fff7e0">
-            <div class="col-3" style="width: 100px; height: 100px; margin: 15px">
-                <img src="{{ poison.image }}" alt="">
+        <a href="/poison/show/{{ poison.id }}">
+            <div class="card m-3" style="max-width: 18rem;">
+                <div class="card-header" style="text-align: center">{{ poison.name }}</div>
+                <div class="card-body">
+                    <img src="/assets/images/poisons/{{ poison.image }}" alt="" style="width: 100%">
+                </div>
             </div>
-            <div class="col" style="text-align: center">
-                <h2>{{ poison.nom }}</h2>
-            </div>
-        </div>
-    </div>
+        </a>
     {% endfor %}
+    </div>
 {% endblock %}
