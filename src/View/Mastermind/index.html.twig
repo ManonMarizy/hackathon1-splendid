@@ -9,10 +9,34 @@ Create the antidote
 {% endblock %}
 
 {% block content %}
-    <h1 class="titleMastermind">Create the antidote</h1>
+    <div class="flexContainer flexCenter">
+        <div class="poisonBloc">
+            <h2>{{ poison[0].name }}</h2>
+            <img src="/assets/images/{{ poison[0].image }}" alt="{{ poison[0].name }}" class="poisonImage" />
+        </div>
+
+        <h1 class="titleMastermind"><div>Create the antidote</div></h1>
+    </div>
+
+
+    {% for goodIngredient in goodIngredients %}
+        <div>
+            <input type="checkbox" id="scales" name="{{ goodIngredient.name }}"
+                   checked>
+            <label for="scales">{{ goodIngredient.name }}</label>
+        </div>
+    {% endfor %}
+    {% for badIngredient in badIngredients %}
+        <div>
+            <input type="checkbox" id="scales" name="{{ badIngredient.name }}"
+                   checked>
+            <label for="scales">{{ badIngredient.name }}</label>
+        </div>
+    {% endfor %}
+
 
     <div class="main">
-        <form method="post" action="/mastermind/index" class="flexContainer flexCenter" />
+        <form method="post" action="/mastermind/index" class="flexContainer flexSpaceAround" />
             <div class="ingredientsContainer">
                 {% for ingredient in ingredients %}
                     <input id="{{ ingredient.name }}" type="text" readonly class="ingredient" style="background: url('/assets/images/{{ ingredient.image }}'); background-size: 101% 101%;" value="{{ ingredient.name }}" />
