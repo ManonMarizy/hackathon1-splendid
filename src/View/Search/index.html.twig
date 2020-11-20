@@ -13,33 +13,6 @@
         <button class="btn btn-light" style="width: 300px; margin: 25px" type="submit" value="{{ symptom.id }}" name="symptom"> {{ symptom.name|capitalize }}</button>
                {% endif %}
         {% endfor %}
-        {#
-        <select name="symptom-1" class="form-control form-control-sm" style="margin-bottom: 20px">
-            <option value="">Select Symptom #1</option>
-            {% for symptom in symptoms %}
-            <option value="{{ symptom.id }}">{{ symptom.name }}</option>
-            {% endfor %}
-        </select>
-        <select name="symptom-2" class="form-control form-control-sm" style="margin-bottom: 20px">
-            <option value="">Select Symptom #2</option>
-            {% for symptom in symptoms %}
-                <option value="{{ symptom.id }}">{{ symptom.name }}</option>
-            {% endfor %}
-        </select>
-        <select name="symptom-3" class="form-control form-control-sm" style="margin-bottom: 20px">
-            <option value="">Select Symptom #3</option>
-            {% for symptom in symptoms %}
-                <option value="{{ symptom.id }}">{{ symptom.name }}</option>
-            {% endfor %}
-        </select>
-        <select name="symptom-4" class="form-control form-control-sm" style="margin-bottom: 20px">
-            <option value="">Select Symptom #4</option>
-            {% for symptom in symptoms %}
-                <option value="{{ symptom.id }}">{{ symptom.name }}</option>
-            {% endfor %}
-        </select>
-        <input class="btn btn-light" type="submit">
-        #}
     </form>
     </div>
 
