@@ -7,10 +7,6 @@
 }
 
 body {
-    background-color: transparent;
-}
-
-body {
     font-family: 'Redressed', cursive;
     background-image: url("../images/homepage/background.jpg");
     background-size: cover;
