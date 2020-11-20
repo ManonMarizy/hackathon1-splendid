@@ -1,15 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Redressed&display=swap');
 
-#search-form {
-    background-color: inherit;
-    margin-top: 5%;
-    text-align: center;
-}
-
 body {
     font-family: 'Redressed', cursive;
     background-image: url("../images/homepage/background.jpg");
     background-size: cover;
+}
+
+#search-form {
+    background-color: inherit;
+    margin-top: 5%;
+    text-align: center;
 }
 
 .title-homepage {
