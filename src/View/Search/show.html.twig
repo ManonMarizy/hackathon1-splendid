@@ -1,0 +1,30 @@
+{% extends "layout.html.twig" %}
+
+{% block content %}
+
+    <div class="container">
+        <h1 style="text-align: center; color: white; font-weight: bold; padding: 10px">Potential poisons for {{ symptom.name|capitalize }}</h1>
+    </div>
+    <div>
+        {% for poison in poisons %}
+            <div class="container-fluid">
+                <div class="card mb-3" style="max-width: 80%; margin-right: 10%; margin-left: 10%;">
+                    <a style="text-decoration: none; color: black" href="/poison/show/{{ poison.id }}">
+                        <div class="row no-gutters">
+                            <div class="col-md-4">
+                                <h5 style="text-align: center; margin-bottom: unset" class="card-title">{{ poison.name }}</h5>
+                                <img src="/assets/images/poisons/{{ poison.image }}" class="card-img" alt="{{ poison.name }}">
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body">
+                                    <p class="card-text text-center">{{ poison.symptom|capitalize }}</p>
+                                    <p class="card-text">{{ poison.description }}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            {% endfor %}
+         </div>
+{% endblock %}

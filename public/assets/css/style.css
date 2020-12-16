@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css2?family=Redressed&display=swap');
+
+html {
+    background: url("../images/homepage/background.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+#search-form {
+    background-color: inherit;
+    margin-top: 5%;
+    text-align: center;
+}
+
+body {
+    background-color: transparent;
+    font-family: 'Redressed', cursive;
+
+}
+
+nav {
+    background-color:#cfcfff;
+    opacity: 0.5;
+}
+
+nav img {
+    width: 50px;
+    height: 50px;
+}
+
+.title-homepage {
+    font-size: 10px;
+}
+
+#left {
+    margin: 5px 5px 5px 0;
+}
+#right {
+    margin: 5px 0 5px 5px;
+}
+#bottom-div {
+    padding: 15px;
+    margin-top: 10px;
+    width: 80%;
+}
+
+#main-div {
+    padding: 30px;
+    width: auto;
+}
+
+a {
+    color: black;
+}
+
+a:hover {
+    color: black;
+    text-decoration: none;
+}
+
+.poison-card {
+    width: 18rem;
+    height: 18rem;
+    background-color: #cfcfff;
+}
+
+.p-card:hover {
+    background-color: #e6e6e6;
+}
+
+.poison-card img {
+    width: 100%;
+    height: 100%;
+}
+
+.poison-show {
+    width: 18rem;
+    background-color: #cfcfff;
+}
+
+.symptom {
+    background-color: #cfcfff;
+}
+
+div.card {
+    border-radius: 10px;
+    opacity: 0.8;
+}
+
+button.btn-light:hover{
+    border: solid blue 2px;
+    transform: scale(1.3);
+}
+
+.menu-item {
+    font-size: 20px;
+}
+
+#a-display {
+    display: none;
+}
+
+.h1 {
+    color: white;
+    text-align: center;
+    font-weight: 700;
+    font-size: 2.5em;
+    text-shadow: 1px 0 0 #000000, -1px 0 0 #000000, 0 1px 0 #000000, 0 -1px 0 #000000, 1px 1px #000000, -1px -1px 0 #000000, 1px -1px 0 #000000, -1px 1px 0 #000000;
+}
+
+.h3{
+    color: white;
+    text-align: center;
+    font-weight: 500;
+    font-size: 2.5em;
+    text-shadow: 1px 0 0 #000000, -1px 0 0 #000000, 0 1px 0 #000000, 0 -1px 0 #000000, 1px 1px #000000, -1px -1px 0 #000000, 1px -1px 0 #000000, -1px 1px 0 #000000;
+}
+
+
+@media screen and (min-width: 992px) {
+
+    #searchnav {
+        margin-left: auto;
+    }
+
+    .menu-item {
+        font-size: 28px;
+    }
+
+    nav img {
+        width: 50px;
+        height: 50px;
+    }
+
+    #a-display {
+        display: block;
+    }
+
+    .h1 {
+        color: white;
+        text-align: center;
+        font-weight: 900;
+        font-size: 3.5em;
+        text-shadow: 1px 0 0 #000000, -1px 0 0 #000000, 0 1px 0 #000000, 0 -1px 0 #000000, 1px 1px #000000, -1px -1px 0 #000000, 1px -1px 0 #000000, -1px 1px 0 #000000;
+    }
+
+    .h3{
+        color: white;
+        text-align: center;
+        font-weight: 700;
+        font-size: 3.5em;
+        text-shadow: 1px 0 0 #000000, -1px 0 0 #000000, 0 1px 0 #000000, 0 -1px 0 #000000, 1px 1px #000000, -1px -1px 0 #000000, 1px -1px 0 #000000, -1px 1px 0 #000000;
+    }
+}
